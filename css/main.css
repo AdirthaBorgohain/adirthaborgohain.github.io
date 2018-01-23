@@ -19,3 +19,7 @@
 	background-color: #591f7c;
 	border-color: #591f7c;
 }
+
+button{
+	outline: none;
+}
