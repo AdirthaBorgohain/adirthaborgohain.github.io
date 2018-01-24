@@ -1,13 +1,18 @@
-body{
+body, html{
+	height: 100%;
+}
+
+.onebg{
 	position: relative;
+	height: 100%;
 	background-image: url(https://images.unsplash.com/photo-1489844097929-c8d5b91c456e?auto=format&fit=crop&w=1352&q=80);
-	background-position: 0px -150px;
+	background-position: center;
 	background-size: cover;
 	background-attachment: scroll;
 }
 
 .write{
-	font-family: 'Oxygen', sans-serif;
+	font-family: 'Comfortaa', cursive;
 }
 
 .text-center{
@@ -28,6 +33,11 @@ body{
 	border-color: #591f7c;
 }
 
-button{
+.nav-link:hover{
+	border-bottom: 2px solid rgba(37, 41, 51, 0.8)
+}
+
+.nav-link{
 	outline: none;
+	font-family: 'Antic', sans-serif;
 }
