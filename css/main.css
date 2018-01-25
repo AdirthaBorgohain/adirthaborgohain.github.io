@@ -45,4 +45,38 @@ body, html{
 	border-bottom: 2px solid rgba(37, 41, 51, 0.8);
 }
 
+#circle{
+	width: 30%;
+	padding-top: 10%;
+	margin: 1.66%;
+}
 
+#dp{
+	border: 2px double black;
+	border-radius: 60%;
+	max-width: 250%;
+	max-height: 250%;
+	margin: 35%;
+	margin-bottom: 5%;
+	padding: 5%;
+}
+
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+}
+
+#primary-name{
+	text-decoration: underline;
+	font-family: 'Josefin Sans', sans-serif;
+	text-shadow: 0.5px 0.5px 0.5px black;
+}
+
+.name-text{
+	margin-top: 10%;
+	font-size: 200%;
+	font-family: 'Josefin Sans', sans-serif;
+}
