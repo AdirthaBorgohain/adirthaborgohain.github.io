@@ -342,6 +342,8 @@ button:focus,
     border-color : #ffffff;
     }
 
+    
+
 @media (max-width : 600px) {
     .header .profile-img {
         z-index : 1;
@@ -484,6 +486,15 @@ button:focus,
 .content-item small {
     color : #888888;
     }
+
+.content-item .project-img{
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+    /* height: 5%; */
+    max-width: 100%;
+    height: auto;
+}
 
 /*-------------------
  * Contact
