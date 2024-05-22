@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Data Scientist @ <a href='https://inveniai.com'>InveniAI</a>
+subtitle: Senior Data Scientist @ <a href='https://inveniai.com'>InveniAI</a>
 
 profile:
   align: right

@@ -1,12 +1,10 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - AdirthaBorgohain
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - AdirthaBorgohain/NER-RE
+  - AdirthaBorgohain/intelliweb-GPT
+  - AdirthaBorgohain/art-critiq
+  - nityanandagohain/proxy_configuration
+  - AdirthaBorgohain/BERT-Text-Analysis 
+  - AdirthaBorgohain/Community-Data-Analysis
