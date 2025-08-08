@@ -1,10 +1,24 @@
+# The featured project will be rendered differently
+- title: OCDify
+  description: The offline AI-powered Mac file organization tool that automatically sorts, categorizes, and declutters your desktop. Transform your chaotic file system into an organized workspace instantly—all while keeping your data 100% private on your Mac.
+  tags:
+    - macOS App
+    - Offline AI
+    - File Organization
+    - Privacy-First
+  url: https://ocdify.vyanlabs.in/
+  image: /assets/images/ocdify-screenshot.png
+  featured: true # This is the special flag
+
+# Regular projects
 - title: reportAI
   description: A Python-based tool that generates comprehensive PDF research reports from conversational text using Generative AI.
   tags:
     - Langchain
     - Pyppeteer
     - Generative AI
-  url: https://github.com/AdirthaBorgohain # Replace with actual project URL if available
+  url: https://github.com/AdirthaBorgohain # Replace with actual project URL
+  featured: false
 
 - title: intelliweb-GPT
   description: An intelligent QA module using GPT models to provide accurate, relevant, and recent answers from Google News/Web, or directly from its own knowledge base.
@@ -13,7 +27,8 @@
     - Llama-index
     - Transformers
     - RAG
-  url: https://github.com/AdirthaBorgohain # Replace with actual project URL if available
+  url: https://github.com/AdirthaBorgohain # Replace with actual project URL
+  featured: false
 
 - title: Personal Portfolio
   description: The very website you are looking at. Built from scratch with Jekyll and designed with a minimalist, interactive, content-first approach.
@@ -22,3 +37,4 @@
     - SCSS
     - JavaScript
   url: https://github.com/AdirthaBorgohain/AdirthaBorgohain.github.io
+  featured: false
