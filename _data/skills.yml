@@ -19,6 +19,7 @@
     - Llama-index
     - PydanticAI
     - Ollama
+    - Agno
 
 - category: Tools & Platforms
   items:
@@ -27,4 +28,4 @@
     - FastAPI
     - Kafka
     - RabbitMQ
-    - Agno
+    - Kubernetes
