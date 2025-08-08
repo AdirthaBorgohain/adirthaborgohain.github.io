@@ -1,11 +1,11 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
-img: assets/img/12.jpg
+title: NER-RE
+description: A Named Entity Recognition + Entity Linker + Relation Extraction Pipeline built using spacy v3.0. Given a text, the pipeline extracts entities from the text as trained and disambiguates the entities to its normalized form through an Entity Linker connected to a Knowledge Base and futhermore, assigns a relation between the entities, if any.
+img: assets/img/ner_re.png
 importance: 1
 category: work
-related_publications: true
+related_publications: false
 ---
 
 Every project has a beautiful feature showcase page.
