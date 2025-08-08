@@ -1,0 +1,55 @@
+# The featured project will be rendered differently
+- title: OCDify
+  description: The offline AI-powered Mac file organization tool that automatically sorts, categorizes, and declutters your desktop. Transform your chaotic file system into an organized workspace instantly—all while keeping your data 100% private on your Mac.
+  tags:
+    - macOS App
+    - Offline AI
+    - File Organization
+    - Privacy-First
+  url: https://ocdify.vyanlabs.in/
+  image: /assets/images/ocdify-screenshot.png
+  featured: true # This is the special flag
+
+# Regular projects
+- title: reportAI
+  description: A Python-based tool that generates comprehensive PDF research reports from conversational text using Generative AI.
+  tags:
+    - Langchain
+    - Pyppeteer
+    - Generative AI
+  url: https://github.com/AdirthaBorgohain/reportAI
+  repo: AdirthaBorgohain/reportAI  # NEW
+  featured: false
+
+- title: NER-RE
+  description: A Named Entity Recognition + Entity Linker + Relation Extraction Pipeline built using spacy v3. Given a text, the pipeline will extract entities from the text as trained and will disambiguate the entities to its normalized form through an Entity Linker connected to a Knowledge Base and will assign a relation between the entities.
+  tags:
+    - Transformers
+    - Spacy
+    - Named-Entity-Recognition
+    - Relation-Extraction
+  url: https://github.com/AdirthaBorgohain/NER-RE
+  repo: AdirthaBorgohain/NER-RE  # NEW
+  featured: false
+
+- title: intelliweb-GPT
+  description: An intelligent QA module using GPT models to provide accurate, relevant, and recent answers from Google News/Web, or directly from its own knowledge base.
+  tags:
+    - Langchain
+    - Llama-index
+    - Transformers
+    - RAG
+  url: https://github.com/AdirthaBorgohain/intelliweb-GPT
+  repo: AdirthaBorgohain/intelliweb-GPT # NEW
+  featured: false
+
+- title: proxy_configuration
+  description: System wide proxy configuration in a single script with options to add, remove proxy and restore system default proxy configuration.
+  tags:
+    - Python
+    - Shell
+    - System-Wide-Proxy
+    - Linux
+  url: https://github.com/nityanandagohain/proxy_configuration
+  repo: nityanandagohain/proxy_configuration # NEW
+  featured: false

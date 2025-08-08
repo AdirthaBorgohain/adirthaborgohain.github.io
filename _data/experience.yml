@@ -1,0 +1,37 @@
+- company: Aqxle
+  company_url: https://aqxle.ai/
+  location: Bengaluru, India / Remote
+  title: AI Research Engineer
+  duration: Aug 2025 – Present
+  details:
+    - "Building AI Agents for the marketing flywheel that helps marketers get from data to insights very quickly, using a patent-pending approach to taxonomy normalization."
+
+- company: VedTechBio
+  company_url: https://vedtechbio.com/
+  location: Bengaluru, India / Remote
+  title: Manager - Data Science & AI Applications
+  duration: July 2023 – Aug 2025
+  details:
+    - "Developed and delivered RxAgentAI, a Generative AI platform for drug research & discovery, integrating features like Report Generation and AI Researcher."
+    - "Built Autonomous AI Agents using reasoning-based LLMs and multi-agent frameworks (Langgraph, PydanticAI) for domain-specific tasks."
+    - "Scaled an AI-powered analytics platform delivering insights from 200M+ papers and 100+ public data sources for big pharma."
+
+- company: Alphameld
+  company_url: https://www.alphameld.com/
+  location: Guilford, USA / Remote
+  title: Senior Data Scientist
+  duration: March 2022 – July 2023
+  details:
+    - "Built an Entity & Relation Extraction pipeline with Entity Linking, improving prediction accuracy by >25% over rule-based systems."
+    - "Led development of ChatAlphaMeld, a biomedical multi-agent RAG tool that reduced hypothesis generation time by over 4x."
+    - "Developed AlphaClinMeld, a clinical trial design platform using LLMs with a human-in-the-loop feedback system."
+
+- company: Netenrich
+  company_url: https://netenrich.com/
+  location: Bengaluru, India
+  title: Data Science Analyst (prev. Intern)
+  duration: Feb 2020 – March 2022
+  details:
+    - "Deployed text classification models (AlBERT, chars2vec) to filter content for a cyber-intelligence platform."
+    - "Built NLP multi-task models to improve SLA response times and a BERT-based NER model that doubled the accuracy of previous systems."
+    - "Designed a probabilistic Bayesian network to accelerate root cause analysis from hours to minutes."

@@ -1,0 +1,65 @@
+<section class="section projects" id="projects">
+    <h2 class="section-title"><i class="fa-solid fa-code-branch"></i> Projects</h2>
+
+    <!-- Part 1: Loop for the Featured Project (No Changes) -->
+    {% for project in site.data.projects %}
+        {% if project.featured == true %}
+        <div class="featured-project-card">
+            <div class="featured-project-image">
+                <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ project.image }}" alt="Screenshot of {{ project.title }}">
+                </a>
+            </div>
+            <div class="featured-project-content">
+                <h3 class="project-title">{{ project.title }}</h3>
+                <p class="project-description">{{ project.description }}</p>
+                <div class="project-tags">
+                    {% for tag in project.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                <div class="project-actions">
+                    <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="project-action-button primary">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Site
+                    </a>
+                    {% if project.github_url %}
+                    <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" class="project-action-button">
+                        <i class="fa-brands fa-github"></i> View on GitHub
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+
+    <!-- Part 2: Loop for the Regular Projects Grid -->
+    <div class="project-grid">
+        {% for project in site.data.projects %}
+            {% if project.featured != true %}
+            <div class="project-card">
+                <div class="project-info">
+                    <h3 class="project-title"><i class="fa-regular fa-folder-open"></i> {{ project.title }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="project-tags">
+                        {% for tag in project.tags %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="project-card-actions">
+                     <!-- NEW: Conditional star count element -->
+                     {% if project.repo %}
+                     <span class="github-stars" data-repo="{{ project.repo }}">
+                         <i class="fa-solid fa-spinner fa-spin"></i> <!-- Loading spinner -->
+                     </span>
+                     {% endif %}
+                     <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="project-card-button">
+                        <i class="fa-brands fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>

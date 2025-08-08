@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body data-theme="light"> <!-- Default to light theme -->
+    
+    <!-- NEW: Simple container for the hero-grid background -->
+    <div class="background-container"></div>
+
+    <!-- The rest of the content remains the same -->
+    {% include header.html %}
+
+    <div class="container">
+        <main>
+            {{ content }}
+        </main>
+        {% include footer.html %}
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
