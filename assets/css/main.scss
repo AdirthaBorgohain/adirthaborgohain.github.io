@@ -115,6 +115,7 @@ a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease
 // About Section
 .about { border-bottom: none; }
 .about-container { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: start; }
+.about-photo { padding-top: 5px;}
 .about-photo img { width: 100%; border-radius: 12px; border: 1px solid var(--border-color); transition: all 0.3s ease; &:hover { transform: scale(1.03); box-shadow: 0 8px 25px var(--shadow-color); } }
 .about-description { font-size: 1.05rem; margin-top: 0; margin-bottom: 2.5rem; color: var(--text-color); text-align: justify; }
 .skill-category { margin-bottom: 1.5rem; &:last-of-type { margin-bottom: 0; } }

@@ -4,8 +4,6 @@ This repository contains the source code for my personal one-page portfolio webs
 
 **[➡️ Live Demo](https://adirtha-borgohain.github.io/)**
 
-![Portfolio Screenshot](./assets/images/screenshot.png)
-
 ---
 
 ## ✨ Features
