@@ -1,0 +1,30 @@
+- category: Languages & Databases
+  items:
+    - Python
+    - C/C++
+    - SQL
+    - HTML/CSS
+    - Postgres
+    - Redis
+    - ElasticSearch
+
+- category: AI & ML Frameworks
+  items:
+    - Tensorflow
+    - Keras
+    - Transformers
+    - Spacy
+    - Langchain
+    - Langgraph
+    - Llama-index
+    - PydanticAI
+    - Ollama
+
+- category: Tools & Platforms
+  items:
+    - Git & GitHub
+    - Docker
+    - FastAPI
+    - Kafka
+    - RabbitMQ
+    - Agno
