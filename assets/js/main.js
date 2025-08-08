@@ -40,9 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const observerOptions = {
         root: null,
-        // CHANGED: The bottom margin is reduced from -50% to -35%.
-        // This gives the 'contact' section enough room to trigger the active state
-        // before the page bottom is reached.
         rootMargin: '-50px 0px -35% 0px',
         threshold: 0
     };
@@ -62,5 +59,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => {
         observer.observe(section);
+    });
+
+    // --- 4. GitHub Stars Count ---
+    const githubStars = document.querySelectorAll('.github-stars');
+    githubStars.forEach(star => {
+        const repo = star.dataset.repo;
+        if (repo) {
+            fetch(`https://api.github.com/repos/${repo}`)
+                .then(response => response.json())
+                .then(data => {
+                    star.innerHTML = `<i class="fa-solid fa-star"></i> ${data.stargazers_count}`;
+                })
+                .catch(error => console.error('Error fetching GitHub stars:', error));
+        }
     });
 });
