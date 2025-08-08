@@ -6,12 +6,12 @@
 :root, body[data-theme='light'] { --bg-color: #fdfdfd; --text-color: #333333; --header-text-color: #000000; --subtle-text-color: #666666; --card-bg-color: #ffffff; --border-color: #eaeaea; --accent-color: #000000; --accent-gradient: linear-gradient(45deg, #333, #000); --shadow-color: rgba(0, 0, 0, 0.05); --hover-bg-color: #f5f5f5; }
 body[data-theme='dark'] { --bg-color: #121212; --text-color: #cccccc; --header-text-color: #ffffff; --subtle-text-color: #888888; --card-bg-color: #1a1a1a; --border-color: #333333; --accent-color: #ffffff; --accent-gradient: linear-gradient(45deg, #ffffff, #aaaaaa); --shadow-color: rgba(0, 0, 0, 0.2); --hover-bg-color: #242424; }
 
-// --- 2. BASE & RESET (No changes) ---
+// --- 2. BASE & RESET ---
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; font-weight: 400; line-height: 1.7; margin: 0; transition: background-color 0.3s ease, color 0.3s ease; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; font-weight: 400; line-height: 1.7; margin: 0; transition: background-color 0.3s ease, color 0.3s ease; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; padding-top: 61px; }
 
-// --- 3. LAYOUT & TYPOGRAPHY (No changes) ---
+// --- 3. LAYOUT & TYPOGRAPHY ---
 .container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
 .section { padding: 4rem 0; border-bottom: 1px solid var(--border-color); &:last-of-type { border-bottom: none; } }
 h1, h2, h3 { font-weight: 600; margin-top: 0; color: var(--header-text-color); }
@@ -20,33 +20,43 @@ a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease
 
 // --- 4. COMPONENTS ---
 
-// Header & Top Navigation (No changes)
+// Header & Top Navigation
 .header { padding: 0; display: flex; flex-direction: column; min-height: auto; }
-.header-bar { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid var(--border-color); }
+.header-bar { position: fixed; top: 0; left: 0; z-index: 1000; background-color: var(--bg-color); width: 100%; border-bottom: 1px solid var(--border-color); transition: background-color 0.3s ease; }
+/* NEW: This container constrains the header content */
+.header-bar-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .header-brand a { font-weight: 600; font-size: 1.2rem; color: var(--header-text-color); }
 .header-controls { display: flex; align-items: center; gap: 2rem; }
 .top-nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
 .top-nav a { font-size: 0.9rem; font-weight: 500; text-transform: lowercase; color: var(--subtle-text-color); position: relative; padding: 0.5rem 0; &::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: var(--accent-color); transform: scaleX(0); transform-origin: bottom right; transition: transform 0.3s ease-out; } &:hover::after, &.active::after { transform: scaleX(1); transform-origin: bottom left; } &:hover, &.active { color: var(--header-text-color); } }
 
-// New Theme Switcher (No changes)
+// New Theme Switcher
 .theme-switcher input { display: none; }
 .slider-label { display: flex; align-items: center; justify-content: space-between; padding: 5px; width: 50px; height: 26px; background-color: var(--hover-bg-color); border-radius: 50px; position: relative; cursor: pointer; transition: background-color 0.3s ease; .slider { position: absolute; top: 3px; left: 4px; width: 20px; height: 20px; background-color: var(--bg-color); border-radius: 50%; transition: transform 0.3s ease; } i { font-size: 0.8rem; color: var(--subtle-text-color); } }
 #theme-toggle:checked + .slider-label .slider { transform: translateX(23px); }
 
-// Header Content (No changes)
+// Header Content
 .header-content { text-align: center; padding: 4rem 1rem; }
 .header-name { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 700; margin-bottom: 0.5rem; strong { font-weight: 700; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; } .lastname { font-weight: 400; color: var(--subtle-text-color); } }
 .header-title { font-size: clamp(1.2rem, 4vw, 1.5rem); font-weight: 400; color: var(--subtle-text-color); }
 
-// Call to Action (CTA) Bar (No changes)
+// Call to Action (CTA) Bar
 .cta-bar { padding: 0 0 2rem 0; border-bottom: 1px solid var(--border-color); }
 .cta-buttons { display: flex; justify-content: center; gap: 1rem; }
 .cta-button { display: inline-flex; align-items: center; gap: 0.75rem; background: transparent; border: 1px solid var(--border-color); color: var(--text-color); padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; i { transition: transform 0.3s ease; } &:hover { background: var(--accent-color); border-color: var(--accent-color); color: var(--bg-color); transform: translateY(-3px); box-shadow: 0 5px 10px var(--shadow-color); } }
 
-// About Section (No changes)
+// About Section
 .about { border-bottom: none; }
 .about-container { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: start; }
-.about-photo img { padding-top: 5px; width: 100%; border-radius: 12px; border: 1px solid var(--border-color); transition: all 0.3s ease; &:hover { transform: scale(1.03); box-shadow: 0 8px 25px var(--shadow-color); } }
+.about-photo img { width: 100%; border-radius: 12px; border: 1px solid var(--border-color); transition: all 0.3s ease; &:hover { transform: scale(1.03); box-shadow: 0 8px 25px var(--shadow-color); } }
 .about-description { font-size: 1.05rem; margin-top: 0; margin-bottom: 2.5rem; color: var(--text-color); text-align: justify; }
 .skill-category { margin-bottom: 1.5rem; &:last-of-type { margin-bottom: 0; } }
 .skill-category h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--header-text-color); }
@@ -60,20 +70,8 @@ a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease
 .experience-location { margin-top: 0.25rem; }
 .experience-content h3 { font-size: 1.2rem; margin-bottom: 1rem; }
 .experience-title .company-separator { color: var(--subtle-text-color); font-weight: 400; margin: 0 0.25rem; }
-.experience-title .company {
-  font-weight: 400;
-}
-.experience-title a.company {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px dotted var(--subtle-text-color);
-  transition: all 0.3s ease;
-
-  &:hover {
-    color: var(--accent-color);
-    border-bottom-color: var(--accent-color);
-  }
-}
+.experience-title .company { font-weight: 400; }
+.experience-title a.company { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--subtle-text-color); transition: all 0.3s ease; &:hover { color: var(--accent-color); border-bottom-color: var(--accent-color); } }
 .experience-details { list-style-type: none; padding-left: 0; margin: 0; li { position: relative; padding-left: 1.5rem; font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--subtle-text-color); text-align: justify; &::before { content: '—'; position: absolute; left: 0; color: var(--subtle-text-color); } } }
 
 // Projects Section
@@ -85,57 +83,37 @@ a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease
 .featured-project-content .project-tags { margin-bottom: 2rem; }
 .project-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 .project-action-button { display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; i { font-size: 0.9rem; } &.primary { background: var(--accent-color); color: var(--bg-color); border: 1px solid var(--accent-color); &:hover { transform: translateY(-3px); box-shadow: 0 5px 10px var(--shadow-color); } } &:not(.primary) { background: transparent; color: var(--text-color); border: 1px solid var(--border-color); &:hover { background: var(--hover-bg-color); border-color: var(--subtle-text-color); } } }
-
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .project-card { display: flex; flex-direction: column; background: transparent; border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px; transition: all 0.3s ease; &:hover { background: var(--card-bg-color); transform: translateY(-5px); box-shadow: 0 10px 20px var(--shadow-color); border-color: var(--border-color); } }
-.project-info { flex-grow: 1; } /* This makes sure the content pushes the button to the bottom */
+.project-info { flex-grow: 1; }
 .project-title { font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--header-text-color); display: flex; align-items: center; gap: 0.5rem; i { opacity: 0.6; } }
 .project-description { font-size: 0.9rem; color: var(--subtle-text-color); flex-grow: 1; margin-bottom: 1rem; text-align: justify; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .tag { background-color: var(--hover-bg-color); color: var(--subtle-text-color); border: 1px solid transparent; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+.project-card-actions { margin-top: 1.5rem; }
+.project-card-button { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: 8px; color: var(--subtle-text-color); background: transparent; border: 1px solid var(--border-color); transition: all 0.3s ease; &:hover { background: var(--accent-color); color: var(--bg-color); border-color: var(--accent-color); } }
 
-/* NEW: Styles for regular project card button */
-.project-card-actions {
-    margin-top: 1.5rem; /* Space between tags and button */
-}
-.project-card-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    color: var(--subtle-text-color);
-    background: transparent;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-
-    &:hover {
-        background: var(--accent-color);
-        color: var(--bg-color);
-        border-color: var(--accent-color);
-    }
-}
-
-// Contact & Footer (No changes)
+// Contact & Footer
 .contact { text-align: center; }
 .contact p { max-width: 60ch; margin-left: auto; margin-right: auto; }
 .contact-links { margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 .contact-link { background: transparent; border: 1px solid var(--border-color); color: var(--text-color); padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; i { margin-right: 0.5rem; transition: transform 0.3s ease; } &:hover { background: var(--accent-color); border-color: var(--accent-color); color: var(--bg-color); transform: translateY(-3px); box-shadow: 0 5px 10px var(--shadow-color); i { transform: scale(1.1); } } }
 .footer { text-align: center; padding: 2rem 0; font-size: 0.85rem; color: var(--subtle-text-color); }
 
-// --- 5. RESPONSIVE DESIGN --- (No changes)
+// --- 5. RESPONSIVE DESIGN ---
 @media (max-width: 768px) {
-  .header-bar { flex-direction: column; gap: 1rem; padding: 1rem; }
-  .header-content { padding: 3rem 1rem; }
-  .container { padding: 0 1.5rem; }
-  .section { padding: 3rem 0; }
-  .section-title { font-size: 1.5rem; margin-bottom: 2rem; }
-  .about-container { grid-template-columns: 1fr; text-align: center; }
-  .about-description { text-align: left; }
-  .about-photo { margin: 0 auto 2rem auto; max-width: 180px; }
-  .project-grid, .experience-item { grid-template-columns: 1fr; }
-  .experience-meta { margin-bottom: 1rem; }
-  .experience-details li, .project-description { text-align: left; }
+    body { padding-top: 113px; }
+    .header-bar { flex-direction: column; } /* This makes the container full width inside */
+    .header-bar-container { padding: 1rem; } /* Reduce padding for mobile */
+    .header-content { padding: 3rem 1rem; }
+    .container { padding: 0 1.5rem; }
+    .section { padding: 3rem 0; }
+    .section-title { font-size: 1.5rem; margin-bottom: 2rem; }
+    .featured-project-card { grid-template-columns: 1fr; padding: 1.5rem; }
+    .about-container { grid-template-columns: 1fr; text-align: center; }
+    .about-description { text-align: left; }
+    .about-photo { margin: 0 auto 2rem auto; max-width: 180px; }
+    .project-grid, .experience-item { grid-template-columns: 1fr; }
+    .experience-meta { margin-bottom: 1rem; }
+    .experience-details li, .project-description { text-align: left; }
 }
