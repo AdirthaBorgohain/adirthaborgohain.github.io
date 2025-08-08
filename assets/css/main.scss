@@ -151,6 +151,49 @@ a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease
 .tag { background-color: var(--hover-bg-color); color: var(--subtle-text-color); border: 1px solid transparent; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
 .project-card-actions { margin-top: 1.5rem; }
 .project-card-button { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: 8px; color: var(--subtle-text-color); background: transparent; border: 1px solid var(--border-color); transition: all 0.3s ease; &:hover { background: var(--accent-color); color: var(--bg-color); border-color: var(--accent-color); } }
+.project-card-actions {
+  margin-top: 1.5rem; /* Space between tags and actions */
+  display: flex;
+  justify-content: space-between; /* Pushes items to opposite ends */
+  align-items: center;
+}
+
+/* NEW: Style for the GitHub stars element */
+.github-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--subtle-text-color);
+  font-weight: 500;
+}
+.github-stars .fa-star {
+  color: #f7b731; /* A nice gold color for the star */
+}
+.github-stars .fa-spin {
+  font-size: 0.8rem;
+}
+
+.project-card-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: var(--subtle-text-color);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+
+  &:hover {
+      background: var(--accent-color);
+      color: var(--bg-color);
+      border-color: var(--accent-color);
+  }
+}
+
 
 // Contact & Footer
 .contact { text-align: center; }

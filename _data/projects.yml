@@ -17,7 +17,19 @@
     - Langchain
     - Pyppeteer
     - Generative AI
-  url: https://github.com/AdirthaBorgohain # Replace with actual project URL
+  url: https://github.com/AdirthaBorgohain/reportAI
+  repo: AdirthaBorgohain/reportAI  # NEW
+  featured: false
+
+- title: NER-RE
+  description: A Named Entity Recognition + Entity Linker + Relation Extraction Pipeline built using spacy v3. Given a text, the pipeline will extract entities from the text as trained and will disambiguate the entities to its normalized form through an Entity Linker connected to a Knowledge Base and will assign a relation between the entities.
+  tags:
+    - Transformers
+    - Spacy
+    - Named-Entity-Recognition
+    - Relation-Extraction
+  url: https://github.com/AdirthaBorgohain/NER-RE
+  repo: AdirthaBorgohain/NER-RE  # NEW
   featured: false
 
 - title: intelliweb-GPT
@@ -27,14 +39,17 @@
     - Llama-index
     - Transformers
     - RAG
-  url: https://github.com/AdirthaBorgohain # Replace with actual project URL
+  url: https://github.com/AdirthaBorgohain/intelliweb-GPT
+  repo: AdirthaBorgohain/intelliweb-GPT # NEW
   featured: false
 
-- title: Personal Portfolio
-  description: The very website you are looking at. Built from scratch with Jekyll and designed with a minimalist, interactive, content-first approach.
+- title: proxy_configuration
+  description: System wide proxy configuration in a single script with options to add, remove proxy and restore system default proxy configuration.
   tags:
-    - Jekyll
-    - SCSS
-    - JavaScript
-  url: https://github.com/AdirthaBorgohain/AdirthaBorgohain.github.io
+    - Python
+    - Shell
+    - System-Wide-Proxy
+    - Linux
+  url: https://github.com/nityanandagohain/proxy_configuration
+  repo: nityanandagohain/proxy_configuration # NEW
   featured: false
