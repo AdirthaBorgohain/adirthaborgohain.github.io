@@ -4,7 +4,9 @@
             <img src="/assets/images/adirtha.jpeg" alt="Photo of {{ site.name }}">
         </div>
         <div class="about-details">
-            <p class="about-description">{{ site.description }}</p>
+            <div class="about-description">
+                {{ site.description | markdownify }}
+            </div>
             <div class="skills">
                 {% for skill_category in site.data.skills %}
                 <div class="skill-category">
