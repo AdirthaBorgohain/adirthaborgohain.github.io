@@ -1,0 +1,18 @@
+<section class="section projects" id="projects">
+    <h2 class="section-title"><i class="fa-solid fa-code-branch"></i> Personal Projects</h2>
+    <div class="project-grid">
+        {% for project in site.data.projects %}
+        <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-info">
+                <h3 class="project-title"><i class="fa-regular fa-folder-open"></i> {{ project.title }}</h3>
+                <p class="project-description">{{ project.description }}</p>
+                <div class="project-tags">
+                    {% for tag in project.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>

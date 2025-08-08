@@ -1,0 +1,22 @@
+<section class="section about" id="about">
+    <div class="about-container">
+        <div class="about-photo">
+            <img src="/assets/images/adirtha.jpeg" alt="Photo of {{ site.name }}">
+        </div>
+        <div class="about-details">
+            <p class="about-description">{{ site.description }}</p>
+            <div class="skills">
+                {% for skill_category in site.data.skills %}
+                <div class="skill-category">
+                    <h3>{{ skill_category.category }}</h3>
+                    <div class="skill-items">
+                        {% for item in skill_category.items %}
+                        <span class="skill-tag">{{ item }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

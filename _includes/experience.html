@@ -1,0 +1,30 @@
+<section class="section experience" id="experience">
+    <h2 class="section-title"><i class="fa-solid fa-tools"></i> Experience</h2>
+    <div class="experience-list">
+        {% for job in site.data.experience %}
+        <div class="experience-item">
+            <div class="experience-meta">
+                <p class="experience-duration">{{ job.duration }}</p>
+                <p class="experience-location">{{ job.location }}</p>
+            </div>
+            <div class="experience-content">
+                <h3 class="experience-title">
+                    {{ job.title }} <span class="company-separator">@</span>
+                    
+                    <!-- NEW: Conditional link for company name -->
+                    {% if job.company_url %}
+                        <a href="{{ job.company_url }}" class="company" target="_blank" rel="noopener noreferrer">{{ job.company }}</a>
+                    {% else %}
+                        <span class="company">{{ job.company }}</span>
+                    {% endif %}
+                </h3>
+                <ul class="experience-details">
+                    {% for detail in job.details %}
+                    <li>{{ detail }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

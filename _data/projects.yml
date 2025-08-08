@@ -1,0 +1,24 @@
+- title: reportAI
+  description: A Python-based tool that generates comprehensive PDF research reports from conversational text using Generative AI.
+  tags:
+    - Langchain
+    - Pyppeteer
+    - Generative AI
+  url: https://github.com/AdirthaBorgohain # Replace with actual project URL if available
+
+- title: intelliweb-GPT
+  description: An intelligent QA module using GPT models to provide accurate, relevant, and recent answers from Google News/Web, or directly from its own knowledge base.
+  tags:
+    - Langchain
+    - Llama-index
+    - Transformers
+    - RAG
+  url: https://github.com/AdirthaBorgohain # Replace with actual project URL if available
+
+- title: Personal Portfolio
+  description: The very website you are looking at. Built from scratch with Jekyll and designed with a minimalist, interactive, content-first approach.
+  tags:
+    - Jekyll
+    - SCSS
+    - JavaScript
+  url: https://github.com/AdirthaBorgohain/AdirthaBorgohain.github.io
