@@ -61,7 +61,28 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // --- 4. GitHub Stars Count ---
+    // --- 4. Mobile Menu Toggle ---
+    const mobileMenuButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    // const body = document.body;
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('is-open');
+        mobileMenuButton.classList.toggle('is-open');
+        body.classList.toggle('no-scroll'); // Prevents scrolling the page when menu is open
+    });
+
+    // Close menu when a link is clicked
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-open');
+            mobileMenuButton.classList.remove('is-open');
+            body.classList.remove('no-scroll');
+        });
+    });
+
+    // --- 5. GitHub Stars Count ---
     const githubStars = document.querySelectorAll('.github-stars');
     githubStars.forEach(star => {
         const repo = star.dataset.repo;

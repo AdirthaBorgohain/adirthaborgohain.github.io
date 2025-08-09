@@ -1,12 +1,13 @@
 <header class="section header" id="home">
-    <!-- The new top navigation bar -->
+    <!-- The top navigation bar -->
     <div class="header-bar">
         <div class="header-bar-container">
             <div class="header-brand">
                 <a href="#home">adirtha</a>
             </div>
             <div class="header-controls">
-                <nav class="top-nav">
+                <!-- This nav is for desktop -->
+                <nav class="top-nav desktop-nav">
                     <ul>
                         <li><a href="#about">about</a></li>
                         <li><a href="#experience">experience</a></li>
@@ -22,11 +23,28 @@
                         <span class="slider"></span>
                     </label>
                 </div>
+                <!-- NEW: Hamburger button for mobile -->
+                <button id="mobile-menu-toggle" class="mobile-menu-button">
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- The main hero content (No changes here) -->
+    <!-- NEW: Mobile navigation overlay -->
+    <div id="mobile-menu" class="mobile-nav-overlay">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#about">about</a></li>
+                <li><a href="#experience">experience</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- The main hero content -->
     <div class="header-content">
         <h1 class="header-name">
             <strong>adirtha</strong> <span class="lastname">borgohain</span>

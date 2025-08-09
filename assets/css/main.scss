@@ -1,81 +1,18 @@
 ---
 ---
 
-// --- 1. MONOCHROME THEME VARIABLES ---
-:root, body[data-theme='light'] {
-    --bg-color: #fdfdfd;
-    --text-color: #333333;
-    --header-text-color: #000000;
-    --subtle-text-color: #666666;
-    --card-bg-color: #ffffff;
-    --border-color: #eaeaea;
-    --accent-color: #000000;
-    --accent-gradient: linear-gradient(45deg, #333, #000);
-    --shadow-color: rgba(0, 0, 0, 0.05);
-    --hover-bg-color: #f5f5f5;
-    /* NEW: Dot color for light mode */
-    --dot-color: rgba(0, 0, 0, 0.1);
-}
-body[data-theme='dark'] {
-    --bg-color: #121212;
-    --text-color: #cccccc;
-    --header-text-color: #ffffff;
-    --subtle-text-color: #888888;
-    --card-bg-color: #1a1a1a;
-    --border-color: #333333;
-    --accent-color: #ffffff;
-    --accent-gradient: linear-gradient(45deg, #ffffff, #aaaaaa);
-    --shadow-color: rgba(0, 0, 0, 0.2);
-    --hover-bg-color: #242424;
-    /* NEW: Dot color for dark mode */
-    --dot-color: rgba(255, 255, 255, 0.1);
-}
+// --- 1. MONOCHROME THEME VARIABLES (No changes) ---
+:root, body[data-theme='light'] { --bg-color: #fdfdfd; --text-color: #333333; --header-text-color: #000000; --subtle-text-color: #666666; --card-bg-color: #ffffff; --border-color: #eaeaea; --accent-color: #000000; --accent-gradient: linear-gradient(45deg, #333, #000); --shadow-color: rgba(0, 0, 0, 0.05); --hover-bg-color: #f5f5f5; --dot-color: rgba(0, 0, 0, 0.1); }
+body[data-theme='dark'] { --bg-color: #121212; --text-color: #cccccc; --header-text-color: #ffffff; --subtle-text-color: #888888; --card-bg-color: #1a1a1a; --border-color: #333333; --accent-color: #ffffff; --accent-gradient: linear-gradient(45deg, #ffffff, #aaaaaa); --shadow-color: rgba(0, 0, 0, 0.2); --hover-bg-color: #242424; --dot-color: rgba(255, 255, 255, 0.1); }
 
 // --- 2. BASE & RESET ---
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    line-height: 1.7;
-    margin: 0;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    padding-top: 61px;
-    position: relative;
-}
+body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; font-weight: 400; line-height: 1.7; margin: 0; transition: background-color 0.3s ease, color 0.3s ease; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; padding-top: 61px; position: relative; }
+/* NEW: Class to prevent scrolling when mobile menu is open */
+body.no-scroll { overflow: hidden; }
 
-/* NEW: Styles for the Spotlight + Dot Grid background */
-.background-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    pointer-events: none;
-    
-    background-color: var(--bg-color);
-    
-    /* CHANGED: Replaced the grid gradients with a dot gradient */
-    background-image:
-        /* Layer 1: The spotlight gradient (on top) */
-        radial-gradient(ellipse 80% 50% at 50% 0%, transparent 40%, var(--bg-color) 100%),
-        /* Layer 2: The dot pattern (replaces the grid lines) */
-        radial-gradient(var(--dot-color) 1px, transparent 1px);
-    
-    /* NEW: background-size is required for the dot pattern */
-    background-size:
-        /* Size for the spotlight (no repeat) */
-        100% 100%,
-        /* Size for the dots (defines the spacing) */
-        20px 20px;
-    
-    transition: background-color 0.3s ease;
-}
+.background-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; background-color: var(--bg-color); background-image: radial-gradient(ellipse 80% 50% at 50% 0%, transparent 40%, var(--bg-color) 100%), radial-gradient(var(--dot-color) 1px, transparent 1px); background-size: 100% 100%, 20px 20px; transition: background-color 0.3s ease; }
 
 
 // --- 3. LAYOUT & TYPOGRAPHY ---
@@ -87,7 +24,7 @@ a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease
 
 // --- 4. COMPONENTS ---
 
-// Header & Top Navigation
+// Header & Navigation
 .header { padding: 0; display: flex; flex-direction: column; min-height: auto; position: relative; z-index: 2; }
 .header-bar { position: fixed; top: 0; left: 0; z-index: 1000; background-color: var(--bg-color); width: 100%; border-bottom: 1px solid var(--border-color); transition: background-color 0.3s ease; }
 .header-bar-container { max-width: 960px; margin: 0 auto; padding: 1rem 2rem; width: 100%; display: flex; justify-content: space-between; align-items: center; }
@@ -95,6 +32,13 @@ a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease
 .header-controls { display: flex; align-items: center; gap: 2rem; }
 .top-nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
 .top-nav a { font-size: 0.9rem; font-weight: 500; text-transform: lowercase; color: var(--subtle-text-color); position: relative; padding: 0.5rem 0; &::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: var(--accent-color); transform: scaleX(0); transform-origin: bottom right; transition: transform 0.3s ease-out; } &:hover::after, &.active::after { transform: scaleX(1); transform-origin: bottom left; } &:hover, &.active { color: var(--header-text-color); } }
+
+/* NEW: Mobile Menu Styles */
+.mobile-menu-button { display: none; /* Hidden by default */ background: none; border: none; color: var(--text-color); font-size: 1.2rem; cursor: pointer; position: relative; width: 24px; height: 24px; padding: 0; i { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: opacity 0.2s ease-in-out; } .fa-xmark { opacity: 0; } &.is-open .fa-bars { opacity: 0; } &.is-open .fa-xmark { opacity: 1; } }
+.mobile-nav-overlay { position: fixed; top: 61px; /* Height of the header bar */ left: 0; width: 100%; height: calc(100vh - 61px); background: var(--bg-color); z-index: 999; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transform: translateY(-20px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; &.is-open { opacity: 1; visibility: visible; transform: translateY(0); } }
+.mobile-nav ul { list-style: none; padding: 0; margin: 0; text-align: center; }
+.mobile-nav li { margin-bottom: 2rem; }
+.mobile-nav a { font-size: 1.5rem; font-weight: 600; color: var(--header-text-color); text-transform: lowercase; }
 
 // New Theme Switcher
 .theme-switcher input { display: none; }
@@ -203,5 +147,40 @@ a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease
 .contact-link { background: transparent; border: 1px solid var(--border-color); color: var(--text-color); padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; i { margin-right: 0.5rem; transition: transform 0.3s ease; } &:hover { background: var(--accent-color); border-color: var(--accent-color); color: var(--bg-color); transform: translateY(-3px); box-shadow: 0 5px 10px var(--shadow-color); i { transform: scale(1.1); } } }
 .footer { text-align: center; padding: 2rem 0; font-size: 0.85rem; color: var(--subtle-text-color); }
 
-// --- 5. RESPONSIVE DESIGN ---
-@media (max-width: 768px) { body { padding-top: 113px; } .header-bar { flex-direction: column; } .header-bar-container { padding: 1rem; } .header-content { padding: 3rem 1rem; } .container { padding: 0 1.5rem; } .section { padding: 3rem 0; } .section-title { font-size: 1.5rem; margin-bottom: 2rem; } .featured-project-card { grid-template-columns: 1fr; padding: 1.5rem; } .about-container { grid-template-columns: 1fr; text-align: center; } .about-description { text-align: left; } .about-photo { margin: 0 auto 2rem auto; max-width: 180px; } .project-grid, .experience-item { grid-template-columns: 1fr; } .experience-meta { margin-bottom: 1rem; } .experience-details li, .project-description { text-align: left; } }
+/// --- 5. RESPONSIVE DESIGN ---
+@media (max-width: 768px) {
+  /* STICKY HEADER & MENU */
+  body { padding-top: 57px; }
+  .desktop-nav { display: none; }
+  .mobile-menu-button { display: block; }
+  .mobile-nav-overlay { top: 57px; height: calc(100vh - 57px); }
+  .header-bar { padding: 0.5rem 0; }
+  .header-bar-container { padding: 0.5rem 1.5rem; }
+
+  /* LAYOUT & TYPOGRAPHY */
+  .container { padding: 0 1.5rem; }
+  .section { padding: 3rem 0; }
+  .header-content { padding: 3rem 1.5rem; }
+  .header-name { font-size: 2.2rem; } /* Refined font size for mobile */
+  .section-title { font-size: 1.5rem; margin-bottom: 2rem; }
+
+  /* ABOUT SECTION */
+  .about-container { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+  .about-description { text-align: left; }
+  .about-photo { margin: 0 auto 1.5rem auto; max-width: 150px; }
+
+  /* EXPERIENCE SECTION */
+  .experience-item { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; }
+  .experience-meta { margin-bottom: 0.5rem; }
+  .experience-details li, .project-description { text-align: left; }
+
+  /* PROJECTS SECTION */
+  .featured-project-card { grid-template-columns: 1fr; padding: 1.5rem; gap: 1.5rem; }
+  .project-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  /* Further refinements for very small screens */
+  .header-name { font-size: 2rem; }
+  .cta-buttons { flex-direction: column; }
+}
