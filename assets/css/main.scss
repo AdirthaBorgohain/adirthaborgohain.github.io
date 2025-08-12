@@ -160,7 +160,8 @@ a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease
   /* LAYOUT & TYPOGRAPHY */
   .container { padding: 0 1.5rem; }
   .section { padding: 3rem 0; }
-  .header-content { padding: 3rem 1.5rem; }
+  .cta-bar { padding: 0 0 2rem; }
+  .header-content { padding: 3rem 1.5rem 1.5rem; }
   .header-name { font-size: 2.2rem; } /* Refined font size for mobile */
   .section-title { font-size: 1.5rem; margin-bottom: 2rem; }
 
